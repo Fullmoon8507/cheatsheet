@@ -21,6 +21,6 @@
 |            | --global --list                                    | ユーザ全体の設定を確認     |
 |            | --local --list                                     | 対象リポジトリの設定を確認 |
 |------------+----------------------------------------------------+----------------------------|
-| git config | --[system or global or local] user.name (UserName) | ユーザ名を設定             |
+| git config | --[system or global or local] user.name (UserName) | ユーザ名を設定         |
 |            | --[system or global or local] user.email (Email)   | メールアドレスを設定       |
 |------------+----------------------------------------------------+----------------------------|
