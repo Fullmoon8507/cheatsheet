@@ -1,0 +1,142 @@
+****************************************************************************************************
+* VirtualBoxにArchLinuxをインストール
+****************************************************************************************************
+0.EFIを有効化
+  VirtualBoxで、「EFIを有効化」にチェックを入れる。
+
+1.キーボード指定
+  # loadkeys jp106
+
+2.システムクロックの更新
+  # timedatectl set-ntp true
+
+3.パーティション設定
+  # fdisk -l
+  # parted /dev/sda
+  (parted) mklabel gpt
+  (parted) mkpart ESP fat32 1MiB 551MiB
+  (parted) set 1 esp on
+  (parted) mkpart primary ext4 551MiB 18.0GiB
+  (parted) mkpart primary linux-swap 18.0GiB 100%
+  (parted) print
+  (parted) quit
+
+4.パーティションのフォーマット
+  # mkfs.fat -F 32 /dev/sda1
+  # mkfs.ext4 /dev/sda2
+  # mkswap /dev/sda3
+
+5.ファイルシステムのマウント
+  # mount /dev/sda2 /mnt
+  # mkdir /mnt/boot
+  # mount /dev/sda1 /mnt/boot
+  # swapon /dev/sda3
+
+6.インストール
+  # sudo pacman -Sy archlinux-keyring
+  # pacstrap /mnt base linux linux-firmware
+
+7.fstabの生成
+  # genfstab -U /mnt >> /mnt/etc/fstab
+
+8.chroot
+  # arch-chroot /mnt
+
+  以下、chroot実行後の状態で実施する。
+
+  8-1.GRUB
+    # pacman -S grub efibootmgr
+    # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+    # grub-mkconfig -o /boot/grub/grub.cfg
+  
+  8-2.タイムゾーン
+    # ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+  
+  8-3.ハードウェアクロック
+    # hwclock --systohc
+  
+  8-4. エディタインストール
+    # pacman -S vim
+  
+  8-5.ロケール
+    # vim /etc/locale.gen
+      -> 「en_US.UTF-8 UTF-8」と「ja_JP.UTF-8 UTF-8」
+    # locale-gen
+    # echo LANG=en_US.UTF-8 > /etc/locale.conf
+    # export LANG=en_US.UTF-8
+  
+  8-5.コンソールキーマップ
+    # echo KEYMAP=jp106 > /etc/vconsole.conf
+  
+  8-6.ホストネーム
+    # vim /etc/hostname
+      -> 「arch」など設定
+  
+  8-7.rootパスワード
+    # passwd
+
+  8-8.ネットワーク
+    # pacman -S networkmanager wpa_supplicant dialog
+	# pacman -S iw dhcpcd netctl
+	# systemctl enable NetworkManager
+  
+  8-9.マイクロコード
+    # pacman -S intel-ucode
+	# grub-mkconfig -o /boot/grub/grub.cfg
+    # # pacman -S dosfstools
+    # # bootctl --path=/boot install
+    # # vim /boot/loader/entries/arch.conf
+    # # vim /boot/loader/loader.conf
+
+9.シャットダウンし、ISOの割当除去して起動。
+  ->IDはroot、PWはpasswdで設定したもの
+
+10.パッケージ最新化
+   # pacman -Syu
+
+11.pacmanの出力をカラー化
+   # vim /etc/pacman.conf
+     -> Color		←コメントアウト
+	    ILoveCandy	←追加
+
+12.アカウント準備とsudo
+   # useradd -m -G wheel (ユーザー名)
+   # passwd (ユーザー名)
+   # pacman -S sudo
+   # EDITOR=vim visudo
+     -> %wheel ALL=(ALL:ALL) ALL	←コメントアウト
+
+13.yayのインストール
+   # sudo pacman -S --needed git base-devel
+   # git clone https://aur.archlinux.org/yay.git
+   # cd yay
+   # makepkg -si
+   ※一般ユーザーで実行する
+
+14.XFCEインストールと起動
+   # pacman -S virtualbox-guest-utils	←VirtualBoxの場合
+   # pacman -S xorg-server xterm
+   # pacman -S xfce4 xfce4-goodies
+   # startxfce4
+
+15.デスクトップ環境の日本語化
+  15-1.キーボード
+    設定 -> キーボード -> レイアウト -> 日本語に変更
+
+  15-2.日本語フォント
+    # pacman -S otf-ipaexfont
+	# fc-list : file | grep -i "ipa"
+
+  15-3.システム表示言語
+    # vim /etc/locale.conf
+	  -> LANG=ja_JP.UTF-8
+
+  15-4.日本語入力環境
+    # pacman -S fcitx-mozc
+	# vim .pam_environment または # vim .xprofile
+	  -> 以下を記載
+	     GTK_IM_MODULE DEFAULT=fcitx
+		 QA_IM_MODULE  DEFAULT=fcitx
+		 XMODIFIERS    DEFAULT=@im=fcitx
+
+  15-5.
