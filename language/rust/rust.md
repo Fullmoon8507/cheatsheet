@@ -26,3 +26,19 @@
 
 ## 可変性
 * (後で記載)
+
+# cargoコマンド
+## プロジェクト作成
+| コマンド | 内容 |
+| -------- | ---- |
+| cargo new {project name} | バイナリプロジェクトを作成 |
+| cargo new --lib {lib name} | ライブラリプロジェクトを作成 |
+
+## キャッシュ削除
+| コマンド | 内容 |
+| -------- | ---- |
+| cargo clean | キャッシュを削除 |
+
+ ※「 Blocking waiting for file lock on package cache」となったら上記のコマンドを実行。それでもだめなら、以下のコマンドを実行。
+ * rm -rf ~/.cargo/registry/index/*
+ * rm -rf ~/.cargo/.package-cache
