@@ -34,8 +34,7 @@
 | curl [url] | -v             | 実行結果を詳細出力               | `curl -v https://www.google.com`        |
 
 <details>
-<summary>備考</summary>
-※サポートしてるプロトコルは以下の通り。
+<summary>※サポートしてるプロトコル</summary>
 
 - HTTP/HTTPS
 - FTP/FTPS/SFTP
