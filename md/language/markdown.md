@@ -59,3 +59,17 @@ int main(){
 ```
 
 インラインコードはバッククオート１つで囲む。「`some code`」
+
+## 折りたたみ
+
+detailsタグとsummaryタグを使用する。
+
+<details>
+<summary>折りたたみ</summary>
+
+aaaaaaaaaaaaaaa
+
+bbbbbbbbbbbbbbb
+
+ccccccccccccccc
+</details>
