@@ -105,6 +105,13 @@ URLを指定してファイルをダウンロードする。
 
 #### nslookup
 
+ドメイン情報をDNSサーバーへ問い合わせる。
+
+|        コマンド        | オブション |               内容                |     コマンドサンプル      |
+| ---------------------- | ---------- | --------------------------------- | ------------------------- |
+| nslookup [domain name] | -          | [domain name]からIPアドレスを取得 | `nslookup www.google.com` |
+| nslookup [ip address]  | -          | [ip address]からドメイン名を取得  | `nslookup 8.8.8.8`        |
+
 #### route
 
 #### arp
