@@ -115,3 +115,12 @@ URLを指定してファイルをダウンロードする。
 #### route
 
 #### arp
+
+### その他
+
+#### DNSキャッシュ
+
+|            コマンド            |   内容   |
+| ------------------------------ | -------- |
+| systemd-resolve --statistics   | 統計表示 |
+| systemd-resolve --flush-caches | 削除     |
