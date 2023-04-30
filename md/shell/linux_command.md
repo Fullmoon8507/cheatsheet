@@ -92,8 +92,8 @@ URLを指定してファイルをダウンロードする。
 | ip addr show          | -4         | IPV4で表示                         |                |
 | ip addr show [device] | -          | [device]に絞って表示               |                |
 | ip link show [device] |            | ネットワークインターフェースの表示 |                |
-| ip route show         | -          | ルーティングを表示                 |                |
-| ip neigh show         | -          | ARPテーブルを表示                  |                |
+| ip route show         | -          | ルーティングを表示                 | routeと類似    |
+| ip neigh show         | -          | ARPテーブルを表示                  | arpと類似      |
 
 #### ifconfig
 
