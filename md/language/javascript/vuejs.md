@@ -127,3 +127,60 @@ export default{
     `
 }
 ```
+
+### emit
+
+Componentから値を取得。※呼び出し元のイベントをComponentに渡すことで実現している。
+
+```vue
+【Main】
+<div id="app">
+    <comp-tag v-on:child-click="parentClick"></comp-tag>
+    <div>
+        <h2>Main</h2>
+        <p>{{ msg }}</p>
+    </div>
+</div>
+
+<script type="module">
+    const { createApp } = Vue
+    import CompTag from './emit.js'
+
+    createApp({
+        components: {
+            CompTag
+        },
+        data(){
+            return{
+                msg: ''
+            }
+        },
+        methods:{
+            parentClick(value){
+                this.msg = value
+            }
+        }
+    })
+    .mount('#app')
+</script>
+ 
+【component】
+export default{
+    data(){
+        return{
+            childValue: 'abc'
+        }
+    },
+    template: `
+        <h2>Component Area</h2>
+        <!-- v-bindは方方向バインドで「html->Vue」はない。そのため、v-modelが必要と思われる。 -->
+        <input type="text" v-model="childValue">
+        <input type="button" value="イベント" v-on:click="clickEvent">
+    `,
+    methods:{
+        clickEvent(){
+            this.$emit('child-click', this.childValue)
+        }
+    }
+}
+```
