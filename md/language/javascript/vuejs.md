@@ -33,8 +33,8 @@
 | 属性値にJavaScript式を埋め込む | v-bind   | :属性名     | `<a v-bind:href="値">リンク</a>`                 | v-bind:属性値="値"                              |
 | 双方向データバインディング     | v-model  | -           | `<input v-model="値>`                            | inputタグ、selectタグ、textareaタグが使用可能。 |
 | イベント                       | v-on     | @イベント名 | `<input v-on:イベント名="式">`                   |                                                 |
-| if文                           | v-if     | -           | `<p v-if="値"></p>`                              |                                                 |
-| 表示の切り替え                 | v-show   | -           | `<p v-show="値"></p>`                            |                                                 |
+| if文                           | v-if     | -           | `<p v-if="値"></p>`                              | 条件に合致しないときは要素が削除される。        |
+| 表示の切り替え                 | v-show   | -           | `<p v-show="値"></p>`                            | 「display:none」の切り替えを行っている。        |
 | 繰り返し                       | v-for    | -           | `<p v-for="配列要素 in 配列" :key="一意のキー">` |                                                 |
 | 式の無効化                     | v-pre    | -           | `<p v-pre>{{ 値 }}</p>`                          |                                                 |
 | HTML埋め込み                   | v-html   | -           | `<p v-html="値"></p>`                            |                                                 |
