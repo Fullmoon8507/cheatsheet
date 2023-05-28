@@ -69,6 +69,7 @@ const { createApp } = Vue
 <div id="app">
     <comp-tag></comp-tag>
 </div>
+
 <script type="module">
     const { createApp } = Vue
     import CompTag from './component.js'
@@ -85,6 +86,44 @@ const { createApp } = Vue
 export default{
     template: `
         <h2>Component Area from JS file</h2>
+    `
+}
+```
+
+### props
+
+Componentに値を渡す。
+
+```vue
+【Main】
+<div id="app">
+    <comp-tag v-bind:msg="mainMessage"></comp-tag>
+</div>
+
+<script type="module">
+    const { createApp } = Vue
+    import CompTag from './props.js'
+
+    createApp({
+        components: {
+            CompTag
+        },
+        data(){
+            return{
+                mainMessage: 'Component Area From Main Via Props'
+            }
+        }
+    })
+    .mount('#app')
+</script>
+
+【component】
+export default{
+    props:{
+        msg: String
+    },
+    template: `
+        <h2>{{ msg }}</h2>
     `
 }
 ```
