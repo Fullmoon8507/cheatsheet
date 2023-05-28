@@ -38,3 +38,26 @@
 | 繰り返し                       | v-for    | -           | `<p v-for="配列要素 in 配列" :key="一意のキー">` |                                                 |
 | 式の無効化                     | v-pre    | -           | `<p v-pre>{{ 値 }}</p>`                          |                                                 |
 | HTML埋め込み                   | v-html   | -           | `<p v-html="値"></p>`                            |                                                 |
+
+## コンポーネント
+
+### 基本的な使用法
+
+```vue
+<div id="app">
+    <comp></comp>
+</div>
+
+<script>
+const { createApp } = Vue
+
+    createApp({
+    })
+    .component('comp', {
+        template: `
+            <h2>Component Area</h2>
+        `
+    })
+    .mount('#app')
+</script>
+```
