@@ -61,3 +61,29 @@ const { createApp } = Vue
     .mount('#app')
 </script>
 ```
+
+上記は１ファイルにコンポーネントを記載しているが、基本的には別ファイルにコンポーネントを定義する。
+
+```vue
+【Main】
+<div id="app">
+    <comp-tag></comp-tag>
+</div>
+<script type="module">
+    const { createApp } = Vue
+    import CompTag from './component.js'
+
+    createApp({
+        components: {
+            CompTag
+        },
+    })
+    .mount('#app')
+</script>
+【component】
+export default{
+    template: `
+        <h2>Component Area from JS file</h2>
+    `
+}
+```
