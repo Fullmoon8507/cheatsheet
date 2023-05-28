@@ -80,6 +80,7 @@ const { createApp } = Vue
     })
     .mount('#app')
 </script>
+
 【component】
 export default{
     template: `
