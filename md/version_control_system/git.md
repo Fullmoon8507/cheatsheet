@@ -63,7 +63,7 @@
 | git branch               | -           | ブランチの一覧を表示                                  |
 | git branch               | -vv         | 上流（アップストリーム）ブランチの確認                |
 | git branch               | -d [branch] | ローカルの[branch]を削除                              |
-| git branch               | -a          | git getch後に当コマンドでリモートブランチの一覧を取得 |
+| git branch               | -a          | git fetch後に当コマンドでリモートブランチの一覧を取得 |
 
 ## チェックアウト
 
