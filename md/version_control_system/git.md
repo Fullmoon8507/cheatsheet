@@ -37,9 +37,10 @@
 
 ## プッシュ
 
-|                    コマンド                     | オプション |            内容            |
-| ----------------------------------------------- | ---------- | -------------------------- |
-| git push [remote repository] [local repository] | -          | local -> remote へ更新する |
+|                    コマンド                     |    オプション     |            内容            |
+| ----------------------------------------------- | ----------------- | -------------------------- |
+| git push [remote repository] [local repository] | -                 | local -> remote へ更新する |
+| git push [remote]                               | --delete [branch] | [remote]の[branch]を削除   |
 
 ## プル
 
@@ -62,7 +63,6 @@
 | git branch               | -                 | ブランチの一覧を表示                   |
 | git branch               | -vv               | 上流（アップストリーム）ブランチの確認 |
 | git branch               | -d [branch]       | ローカルの[branch]を削除               |
-| git branch [remote]      | --delete [branch] | [remote]の[branch]を削除               |
 
 ## チェックアウト
 
