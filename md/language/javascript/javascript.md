@@ -87,3 +87,14 @@ let 変数名 = 引数 => {
 ```javascript
 let 変数名 = (引数１,引数２, ...) => 戻り値;
 ```
+
+## ...演算子
+
+引数時の配列を展開してくれる。
+
+```javascript
+let nums = [1, 2, 3, 4];
+let sum = (num1,num2,num3,num4) => num1+num2+num3+num4;
+
+console.log(sum(...nums));
+```
