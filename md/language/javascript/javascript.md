@@ -46,3 +46,12 @@ let x = {
 console.log(x.a)
 console.log(x['b'])
 ```
+
+### 関数の定義方法
+
+|           項目           |                  記載サンプル                  |
+| ------------------------ | ---------------------------------------------- |
+| function命令             | function sum(a,b){return a+b}                  |
+| Function()コンストラクタ | let sum = new Function('a', 'b', 'return a+b') |
+| 関数リテラル             | let sum = function(a,b){return a+b}            |
+| アロー関数               | let sum = (a,b) => {return a+b}                |
