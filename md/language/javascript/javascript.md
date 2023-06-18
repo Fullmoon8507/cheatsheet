@@ -55,3 +55,35 @@ console.log(x['b'])
 | Function()コンストラクタ | let sum = new Function('a', 'b', 'return a+b') |
 | 関数リテラル             | let sum = function(a,b){return a+b}            |
 | アロー関数               | let sum = (a,b) => {return a+b}                |
+
+## アロー関数
+
+関数リテラルを使った関数の定義を簡略化して記述することができる。
+
+### 基本的な書き方
+
+```javascript
+let 変数名 = (引数１, 引数２, ...) => {
+    処理;
+    ...
+    return 戻り値;
+};
+```
+
+### 省略した書き方
+
+引数が１だった場合、引数を囲むカッコを省略することができる。
+
+```javascript
+let 変数名 = 引数 => {
+    処理;
+    ...
+    return 戻り値;
+};
+```
+
+関数の処理がreturn文のみだった場合、ブロックを表すカッコとreturnを省略できる。
+
+```javascript
+let 変数名 = (引数１,引数２, ...) => 戻り値;
+```
