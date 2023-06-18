@@ -31,3 +31,18 @@
 | プリミティブ型 | String    | 文字列。                                           |
 | プリミティブ型 | Symbol    | シンボル。インスタンスが固有で不変となるデータ型。 |
 | オブジェクト型 | Object    | オブジェクト。                                     |
+
+### オブジェクト
+
+- 名前(key)と値(value)を持つプロパティ(property)で構成される。
+- JavaScriptはオブジェクトと連想配列の区別はない。
+- `{}`で定義する。
+
+```javascript
+let x = {
+    a: 1,
+    b: "abc"
+}
+console.log(x.a)
+console.log(x['b'])
+```
