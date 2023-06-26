@@ -189,7 +189,7 @@ export default{
 
 ### $refs
 
-HTMLエレメントを操作可能。
+HTMLエレメントを取得。
 
 ```vue
 <input type="checkbox" ref="checkboxRef" value="aaa" v-on:change="checkboxEvent()">
@@ -206,6 +206,33 @@ HTMLエレメントを操作可能。
                 alert(this.$refs.checkboxRef.checked);
                 alert(this.$refs.checkboxRef.value);
             }
+        }
+    })
+    .mount('#app')
+</script>
+```
+
+### $data
+
+dataオプションからオブジェクトを取得。
+
+```vue
+<script>
+    const { createApp } = Vue;
+
+    createApp({
+        data(){
+            return{
+                gmsg: {
+                    G00001: "abc",
+                }
+            }
+        },
+        methods:{
+            clickEvent(){
+                alert(this.$data.gmsg.G00001)
+                alert(this.$data.gmsg['G00001'])
+            },
         }
     })
     .mount('#app')
