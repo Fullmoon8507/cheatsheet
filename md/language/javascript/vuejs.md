@@ -217,6 +217,7 @@ HTMLエレメントを取得。
 dataオプションからオブジェクトを取得。
 
 ```vue
+<input type="checkbox" v-model="$data.gmsg['G00001']" v-on:change="clickEvent()">
 <script>
     const { createApp } = Vue;
 
@@ -224,7 +225,7 @@ dataオプションからオブジェクトを取得。
         data(){
             return{
                 gmsg: {
-                    G00001: "abc",
+                    G00001: false,
                 }
             }
         },
