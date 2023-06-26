@@ -194,7 +194,7 @@ HTMLエレメントを操作可能。
 ```vue
 <input type="checkbox" ref="checkboxRef" value="aaa" v-on:change="checkboxEvent()">
 <script type="module">
-   	const { createApp } = Vue;
+    const { createApp } = Vue;
 
     createApp({
         data(){
