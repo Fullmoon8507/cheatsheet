@@ -122,4 +122,4 @@ console.log(sum(...nums));
 | ------------ | ------------------------------------------ | ------------------------------------------- |
 | 渡し方       | `<input type="text" onChange="xxx(this)">` | `<input type="text" onChange="xxx(event)">` |
 | 引数の中身   | HTMLエレメント                             | イベントオブジェクト                        |
-| 引数の使い方 | `target.name` や `target.value` など       | `e.target.value` や `e.type` など           |
+| 引数の使い方 | `e.name` や `e.value` など                 | `e.target.value` や `e.type` など           |
