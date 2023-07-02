@@ -124,18 +124,33 @@ console.log(sum(...nums));
 | 引数の中身   | HTMLエレメント                             | イベントオブジェクト                        |
 | 引数の使い方 | `e.name` や `e.value` など                 | `e.target.value` や `e.type` など           |
 
-
 ## HTML DOM
 
-### HTML Element
+### Element
 
 #### プロパティ
 
-|        項目         |            内容            |                                             備考                                             |
-| ------------------- | -------------------------- | -------------------------------------------------------------------------------------------- |
-| HTMLElement.dataset | カスタムデータ属性(data-*) | 例えばタグで「data-target-id」と指定した場合、JSでは「XXX.dataset.targetid」でアクセスする。 |
-h
-| HTMLElement.hidden  | hidden属性                 | 表示：true、非表示；false                                                                    |
+|       項目        |                 内容                  | ReadWrite | 備考 |
+| ----------------- | ------------------------------------- | --------- | ---- |
+| Element.classList | class属性のリストが入ったDOMTokenList | ReadOnly  |      |
+| Element.className | 要素のclass(文字列)                   |           |      |
+| Element.id        | 要素のID                              |           |      |
+| Element.children  | 要素の子要素                          | ReadOnly  |      |
+
+### HTML Element
+
+|      項目      |                          内容                          | 備考 |
+| -------------- | ------------------------------------------------------ | ---- |
+| Element.append | この要素内の最後にNodeオブジェクトまたは文字列を追加。 |      |
+| Element.before | 要素の直前にNodeオブジェクトまたは文字列を追加。       |      |
+| Element.after  | 要素の直後にNodeオブジェクトまたは文字列を追加。       |      |
+
+#### プロパティ
+
+|        項目         |            内容            | ReadWrite |                                             備考                                             |
+| ------------------- | -------------------------- | --------- | -------------------------------------------------------------------------------------------- |
+| HTMLElement.dataset | カスタムデータ属性(data-*) | ReadOnly  | 例えばタグで「data-target-id」と指定した場合、JSでは「XXX.dataset.targetid」でアクセスする。 |
+| HTMLElement.hidden  | hidden属性                 |           | 表示：true、非表示；false                                                                    |
 
 ### メソッド
 
