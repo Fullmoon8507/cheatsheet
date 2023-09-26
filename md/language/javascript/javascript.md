@@ -107,7 +107,7 @@ console.log(sum(...nums));
 
 - イベントが発生したときに呼び出される処理のこと。主なイベントハンドラは以下の通り。
 
-| イベントハンドラ j|                  内容                  |
+| イベントハンドラ |                  内容                  |
 | ---------------- | -------------------------------------- |
 | onClick          | クリック時                             |
 | onChange         | フォームの選択や入力欄に変更があった時 |
@@ -159,3 +159,28 @@ console.log(sum(...nums));
 | HTMLElement.click() | 要素にマウスクリックイベントを送信 |      |
 | HTMLElement.focus() | 要素にフォーカスを当てる           |      |
 | HTMLElement.blur()  | 要素のフォーカスを外す             |      |
+
+## sessionStorage(セッションストレージ)
+
+### 保存
+
+|                  項目                   |              内容              | 備考 |
+| --------------------------------------- | ------------------------------ | ---- |
+| sessionStorage.key = 'value'            | 'key'をキーとして'value'を保存 |      |
+| sessionStorage['key'] = 'value;         | 上記同様                       |      |
+| sessionStorage.setItem('key', 'value'); | 上記同様                       |      |
+
+### 取得
+
+|             項目              |         内容          | 備考 |
+| ----------------------------- | --------------------- | ---- |
+| sessionStorage.key            | 'key'に紐づく値を取得 |      |
+| sessionStorage['key']         | 上記同様              |      |
+| sessionStorage.getItem('key') | 上記同様              |      |
+
+### 削除・初期化
+
+|               項目               |          内容           | 備考 |
+| -------------------------------- | ----------------------- | ---- |
+| sessionStorage.removeItem('key') | 'key'に紐づく内容を削除 |      |
+| sessionStorage.clear()           | 初期化（全削除）        |      |
