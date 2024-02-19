@@ -31,3 +31,20 @@ GPT-3.5 Turbo モデルは、高機能でコスト効率に優れています。
 | gpt-3.5-turbo-instruct | $0.0015 / 1K tokens | $0.0020 / 1K tokens |
 
 + [OpenAI Pricing](https://openai.com/pricing)　※2024/2/19時点
+
+## OpenAI API
+
+### APIの種類
+
+| API | 概要 |
+| --- | --- |
+| Audio | 音声をテキストに、またはテキストを音声に変換する方法を学びます |
+| Chat | 会話を構成するメッセージのリストが与えられると、モデルは応答を返します |
+| Embeddings | 機械学習モデルとアルゴリズムで簡単に利用できる、特定の入力のベクトル表現を取得します |
+| Fine-tuning | 微調整ジョブを管理して、モデルを特定のトレーニング データに合わせて調整します |
+| Files | ファイルは、アシスタントや微調整などの機能で使用できるドキュメントをアップロードするために使用されます |
+| Images | プロンプトや入力画像が与えられると、モデルは新しい画像を生成します |
+| Models | API で利用可能なさまざまなモデルをリストして説明します |
+| Moderations | 入力テキストを指定すると、モデルがそれを OpenAI のコンテンツ ポリシーに違反していると分類した場合に出力します |
+
++ [OpenAI API Reference](https://platform.openai.com/docs/api-reference)
